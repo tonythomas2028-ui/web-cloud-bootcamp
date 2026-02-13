@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web & Cloud Bootcamp</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#0b0f19;
+color:white;
+line-height:1.6;
+scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+z-index:1000;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(8px);
+}
+
+nav h3{
+color:#facc15;
+font-weight:600;
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+letter-spacing:1px;
+}
+
+nav ul li a:hover{
+color:#facc15;
+}
+
+.menu-toggle{
+display:none;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:58px;
+font-family:Georgia, serif;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+color:#d1d5db;
+margin-bottom:30px;
+max-width:700px;
+}
+
+/* BUTTONS */
+.btn-primary{
+padding:14px 40px;
+background:#facc15;
+border:none;
+border-radius:5px;
+font-weight:600;
+cursor:pointer;
+margin-right:15px;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+background:#eab308;
+}
+
+.btn-outline{
+padding:14px 40px;
+border:1px solid white;
+background:transparent;
+color:white;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-outline:hover{
+background:white;
+color:black;
+}
+
+/* SECTIONS */
+.section{
+padding:100px 8%;
+text-align:center;
+background:#0b0f19;
+}
+
+.section h2{
+color:#facc15;
+margin-bottom:40px;
+font-size:30px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:#111827;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#facc15;
+}
+
+.card h3{
+color:#facc15;
+margin-bottom:10px;
+}
+
+.card p{
+color:#d1d5db;
+}
+
+/* FORM */
+form{
+max-width:400px;
+margin:auto;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #374151;
+background:#1f2937;
+color:white;
+}
+
+input:focus,select:focus{
+outline:none;
+border-color:#facc15;
+}
+
+/* FOOTER */
+footer{
+background:#000;
+padding:25px;
+text-align:center;
+color:#9ca3af;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav ul{
+flex-direction:column;
+background:#000;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+display:none;
+padding:20px;
+}
+
+nav ul.active{
+display:block;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h3>Bootcamp 2026</h3>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul id="menu">
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#learn">SCHEDULE</a></li>
+<li><a href="#oracle">ORACLE</a></li>
+<li><a href="#register">REGISTER</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>WEB & CLOUD DEPLOYMENT BOOTCAMP</h1>
+<p>Build. Deploy. Connect Domain. Enable SSL. Go Live with Oracle Cloud Infrastructure.</p>
+
+<div>
+<button class="btn-primary" onclick="document.getElementById('register').scrollIntoView()">REGISTER NOW</button>
+<button class="btn-outline" onclick="document.getElementById('about').scrollIntoView()">KNOW MORE</button>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<h2>About The Program</h2>
+<p style="max-width:850px;margin:auto;color:#d1d5db;">
+This 3-Day Bootcamp guides you through building a modern website 
+and deploying it live using Oracle Cloud Infrastructure. 
+You will learn real-world deployment practices including 
+instance management, storage configuration, domain mapping and SSL setup.
+</p>
+</section>
+
+<!-- LEARN -->
+<section class="section" id="learn">
+<h2>What You Will Learn</h2>
+<div class="grid">
+<div class="card">
+<h3>Day 1 – Web Development</h3>
+<p>HTML, CSS, JavaScript, Responsive Design & Mini Project.</p>
+</div>
+<div class="card">
+<h3>Day 2 – Cloud Computing</h3>
+<p>Instance Lifecycle, SSH/RDP, Storage, Database Services & Lambda.</p>
+</div>
+<div class="card">
+<h3>Day 3 – Deployment</h3>
+<p>Domain Purchase, Static IP, DNS Mapping & SSL Setup.</p>
+</div>
+</div>
+</section>
+
+<!-- ORACLE -->
+<section class="section" id="oracle">
+<h2>Why Oracle Cloud Infrastructure?</h2>
+<div class="grid">
+<div class="card">
+<h3>High Performance</h3>
+<p>Powerful compute and enterprise-grade architecture.</p>
+</div>
+<div class="card">
+<h3>Always Free Tier</h3>
+<p>Free cloud resources for learners and students.</p>
+</div>
+<div class="card">
+<h3>Enterprise Security</h3>
+<p>IAM, encryption and secure networking systems.</p>
+</div>
+<div class="card">
+<h3>Database Excellence</h3>
+<p>World-class Oracle database services.</p>
+</div>
+</div>
+</section>
+
+<!-- REGISTER -->
+<section class="section" id="register">
+<h2>Register Now</h2>
+<p style="color:#d1d5db;">80% Attendance Mandatory | Certificate Provided</p>
+
+<form action="YOUR_GOOGLE_FORM_ACTION_LINK" method="POST" target="_blank">
+<input type="text" name="entry.xxxxx" placeholder="Full Name" required>
+<input type="email" name="entry.xxxxx" placeholder="Email" required>
+<input type="tel" name="entry.xxxxx" placeholder="Phone Number" required>
+<select name="entry.xxxxx" required>
+<option value="">Select Category</option>
+<option>Student</option>
+<option>Job Seeker</option>
+<option>Working Professional</option>
+</select>
+<button class="btn-primary">Submit Registration</button>
+</form>
+</section>
+
+<footer>
+© 2026 Web & Cloud Bootcamp | Amal Jyothi Events
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
